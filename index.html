@@ -10,6 +10,9 @@
 
     <ul>
         <li><a href="#65002">[65002]: Text extraction</a></li>
+        <li><a href="#65003">[65003]: Summarization</a></li>
+        <li><a href="#65004">[65004]: Translation</a></li>
+        <li><a href="#65005">[65005]: Image Generation</a></li>
     </ul>
 
     <h2>Kinds / Job Types</h2>
@@ -93,6 +96,69 @@
         </dt>
         <dd>
             Desired language in BCP 47 format (e.g. "en-US")
+        </dd>
+    </dl>
+
+    <hr>
+
+    <h3 id="65003"><a name="65003">Kind 65003: <i>Summarization</i></a></h3>
+
+    <p>Summarize input</p>
+
+    <h4>Params</h4>
+
+    <dl>
+        <dt>
+            <code>
+                [ "param", "length", "&lt;length&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Specifies the length of the summary in words, sentences, or paragraphs (e.g. "5 paragraphs")
+        </dd>
+    </dl>
+
+    <h4>Outputs</h4>
+
+    <p>Including but not limited to:</p>
+
+    <ul>
+        <li><code>text/plain</code></li>
+        <li><code>text/markdown</code></li>
+    </ul>
+
+    <hr>
+
+    <h3 id="65005"><a name="65005">Kind 65005: <i>Image Generation</i></a></h3>
+
+    <p>Summarize input</p>
+
+    <h4>Params</h4>
+
+    <dl>
+        <dt>
+            <code>
+                [ "param", "prompt", "&lt;prompt&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Optional prompt to use for image generation
+        </dd>
+        <dt>
+            <code>
+                [ "param", "negative_prompt", "&lt;negative_prompt&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Optional negative prompt to use for image generation
+        </dd>
+        <dt>
+            <code>
+                [ "param", "ratio", "&lt;ratio&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Ratio to use for image generation (e.g. "16:9")
         </dd>
     </dl>
 
