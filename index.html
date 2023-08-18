@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Vending Machines</title>
+</head>
+<body>
+    <h1>Data Vending Machines</h1>
+
+    <ul>
+        <li><a href="#65002">[65002]: Text extraction</a></li>
+    </ul>
+
+    <h2>Kinds / Job Types</h2>
+
+    <h3 id="65002"><a name="65002">Kind 65002: <i>Text Extraction</i></a></h3>
+
+    <p>Job request to extract text from some kind of input.</p>
+
+    <h4>Input</h4>
+
+    <p>
+        Jobs MIGHT specify a mime type as the
+        <code>marker</code> in the <code>i</code> tag.
+    </p>
+
+    <h4>Params</h4>
+
+    <dl>
+        <dt>
+            <code>
+                [ "param", "range", "&lt;start&gt;", "&lt;end&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Specifies a range on which to focus the transcription
+            in seconds (for audio inputs)
+        </dd>
+    </dl>
+
+    <h4>Outputs</h4>
+
+    <p>Including but not limited to:</p>
+
+    <ul>
+        <li><code>text/vtt</code></li>
+        <li><code>text/plain</code></li>
+        <li><code>text/markdown</code></li>
+    </ul>
+
+    <hr>
+
+    <h3 id="65003"><a name="65003">Kind 65003: <i>Summarization</i></a></h3>
+
+    <p>Summarize input</p>
+
+    <h4>Params</h4>
+
+    <dl>
+        <dt>
+            <code>
+                [ "param", "length", "&lt;length&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Specifies the length of the summary in words, sentences, or paragraphs (e.g. "5 paragraphs")
+        </dd>
+    </dl>
+
+    <h4>Outputs</h4>
+
+    <p>Including but not limited to:</p>
+
+    <ul>
+        <li><code>text/plain</code></li>
+        <li><code>text/markdown</code></li>
+    </ul>
+
+    <hr>
+
+    <h3 id="65004"><a name="65004">Kind 65004: <i>Translation</i></a></h3>
+
+    <p>Summarize input</p>
+
+    <h4>Params</h4>
+
+    <dl>
+        <dt>
+            <code>
+                [ "param", "lang", "&lt;lang&gt;" ]
+            </code>
+        </dt>
+        <dd>
+            Desired language in BCP 47 format (e.g. "en-US")
+        </dd>
+    </dl>
+
+    <h2>Examples</h2>
+
+
+</body>
+</html>
