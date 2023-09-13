@@ -1,0 +1,33 @@
+# Theme settings
+doks:
+    baseurl:
+    color_theme: blue # Available themes: blue (default), green, purple, red and yellow
+    header:
+        logo:
+            text: Data Vending Machine
+            image:
+        nav:
+            - item_name: Home
+              item_url: /
+            - item_name: NIP-90
+              item_url: https://github.com/nostr-protocol/nips/blob/vending-machine/90.md
+    footer:
+        content:
+            logo:
+                text: Data Vending Machine
+                image:
+            copyright: MIT License
+        social_list:
+            - network_name: github
+              profile_url: "https://github.com/pablof7z/data-vending-machines.org"
+
+# SASS settings
+sass:
+    sass_dir: ./doks-theme/_sass
+    style: :compressed
+
+# Jekyll settings
+layouts_dir: ./doks-theme/_layouts
+includes_dir: ./doks-theme/_includes
+exclude: [ 'README.md', 'CHANGELOG.md' ]
+permalink: /:title/
