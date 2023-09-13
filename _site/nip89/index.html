@@ -84,9 +84,33 @@
 
 <p>Data Vending Machines make extend use of these capabilities; DVMs should announce their capabilities by creating an application handler event with a <code class="language-plaintext highlighter-rouge">k</code> of the handled job request kind.</p>
 
-<p>A <code class="language-plaintext highlighter-rouge">kind:31990</code> (application handler) event should use it’s <code class="language-plaintext highlighter-rouge">content</code> profile data to explain to an end-user it’s specific characteristics.</p>
+<p>A <code class="language-plaintext highlighter-rouge">kind:31990</code> (application handler) event should use it’s <code class="language-plaintext highlighter-rouge">content</code> profile data to explain to an end-user its specific characteristics.</p>
+
+<p>Clients SHOULD show this information as a way to allow users to choose the specific DVM they want to use.</p>
+
+<p>This is where the long-tail of DVMs can be explored.</p>
 
 <h1 id="example">Example</h1>
+
+<h2 id="dvm-supporting-kind65005--in-dali-style">DVM supporting <code class="language-plaintext highlighter-rouge">kind:65005</code> – in Dali style</h2>
+
+<p>This NIP-89 acts as a sales-pitch for the DVM to explain to a user exactly what they can expect from interacting with this DVM</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693484377</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{
+        </span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Dali Vending Machine</span><span class="se">\"</span><span class="s2">,
+        </span><span class="se">\"</span><span class="s2">image</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">https://cdn.nostr.build/i/fb207be87d748ad927f52a063c221d1d97ef6d75e660003cb6e85baf2cd2d64e.jpg</span><span class="se">\"</span><span class="s2">,
+        </span><span class="se">\"</span><span class="s2">about</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">I'm Dali re-incarnated, faster and cheaper</span><span class="se">\"</span><span class="s2">,
+    }"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w"> </span><span class="s2">"d"</span><span class="p">,</span><span class="w"> </span><span class="s2">"td51xbgxwbt5116r"</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w"> </span><span class="s2">"k"</span><span class="p">,</span><span class="w"> </span><span class="s2">"65005"</span><span class="w"> </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">31990</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b37d5dc88c1cbd32d75b713f6d4c2f7766276f51c9337af9d32c8d715cc1b93"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="dvm-supporting-kind65008">DVM supporting <code class="language-plaintext highlighter-rouge">kind:65008</code></h2>
 
