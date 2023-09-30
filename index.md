@@ -36,4 +36,8 @@ grid_navigation:
       excerpt: "Kind 65003"
       cta: View
       url: 'kinds/65003'
+    - title: Text Generation
+      excerpt: "Kind 65010"
+      cta: View
+      url: 'kinds/650010'
 ---
