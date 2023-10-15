@@ -29,15 +29,19 @@ grid_navigation:
       excerpt: The NIP that describes Data Vending Machines
       url: https://github.com/nostr-protocol/nips/blob/vending-machine/90.md
     - title: Text Extraction
-      excerpt: "Kind 65002"
+      excerpt: "Kind 5000"
       cta: View
-      url: 'kinds/65002'
+      url: 'kinds/5000'
     - title: Text Summarization
-      excerpt: "Kind 65003"
+      excerpt: "Kind 5001"
       cta: View
-      url: 'kinds/65003'
+      url: 'kinds/6001'
+    - title: Text Translation
+      excerpt: "Kind 5002"
+      cta: View
+      url: 'kinds/5002'
     - title: Text Generation
-      excerpt: "Kind 65010"
+      excerpt: "Kind 5004"
       cta: View
-      url: 'kinds/650010'
+      url: 'kinds/5004'
 ---
