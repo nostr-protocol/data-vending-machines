@@ -35,13 +35,21 @@ grid_navigation:
     - title: Text Summarization
       excerpt: "Kind 5001"
       cta: View
-      url: 'kinds/6001'
+      url: 'kinds/5001'
     - title: Text Translation
       excerpt: "Kind 5002"
       cta: View
       url: 'kinds/5002'
     - title: Text Generation
-      excerpt: "Kind 5004"
+      excerpt: "Kind 5050"
       cta: View
-      url: 'kinds/5004'
+      url: 'kinds/5050'
+    - title: Image Generation
+      excerpt: "Kind 5100"
+      cta: View
+      url: 'kinds/5100'
+    - title: Video Converion
+      excerpt: "Kind 5200"
+      cta: View
+      url: 'kinds/5200'
 ---
