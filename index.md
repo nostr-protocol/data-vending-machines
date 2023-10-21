@@ -25,31 +25,25 @@ grid_navigation:
     - title: NIP-89's role
       excerpt: The important role of NIP-89 in DVMs
       url: /nip89
+      cta: Read more
     - title: NIP-90
       excerpt: The NIP that describes Data Vending Machines
       url: https://github.com/nostr-protocol/nips/blob/vending-machine/90.md
-    - title: Text Extraction
-      excerpt: "Kind 5000"
+      cta: Read more
+    - title: Text Manipulation
+      excerpt: "Jobs where the input or output is text"
       cta: View
-      url: 'kinds/5000'
-    - title: Text Summarization
-      excerpt: "Kind 5001"
+      url: 'ranges/50xx'
+    - title: Image Manipulation
+      excerpt: "Jobs where the input or output is an image"
       cta: View
-      url: 'kinds/5001'
-    - title: Text Translation
-      excerpt: "Kind 5002"
+      url: 'ranges/51xx'
+    - title: Video Manipulation
+      excerpt: "Jobs where the input or output is video"
       cta: View
-      url: 'kinds/5002'
-    - title: Text Generation
-      excerpt: "Kind 5050"
+      url: 'ranges/52xx'
+    - title: Discovery
+      excerpt: "Jobs where the goal is to discover something"
       cta: View
-      url: 'kinds/5050'
-    - title: Image Generation
-      excerpt: "Kind 5100"
-      cta: View
-      url: 'kinds/5100'
-    - title: Video Converion
-      excerpt: "Kind 5200"
-      cta: View
-      url: 'kinds/5200'
+      url: 'ranges/53xx'
 ---

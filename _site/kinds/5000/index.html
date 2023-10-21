@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-<title>Summarization</title>
+<title>Text extraction</title>
 
-	<meta name="description" content="Summarize input(s)">
+	<meta name="description" content="Job request to extract text from some kind of input.">
 
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -62,10 +62,10 @@
 						<div class="align-container" data-mh>
 							<div class="align-inner">
 								
-									<h1 class="hero-subheader__title">Summarization</h1>
+									<h1 class="hero-subheader__title">Text extraction</h1>
 								
 								
-									<p class="hero-subheader__desc">Summarize input(s)</p>
+									<p class="hero-subheader__desc">Job request to extract text from some kind of input.</p>
 								
 								
 							</div><!-- /.align-inner -->
@@ -82,15 +82,24 @@
 						<div class="content">
 							<h1 id="input">Input</h1>
 
-<p>Job requests SHOULD include 1 one or more inputs. Inputs should be readily available and not require any form of text-processing or extraction (i.e. inputs should not point to audio-files or HTML URLs)</p>
+<p>Jobs MIGHT specify a mime type as the <code>marker</code> in the <code>i</code> tag.</p>
 
 <h1 id="params">Params</h1>
 
-<h2 id="length"><code class="language-plaintext highlighter-rouge">length</code></h2>
+<h2 id="range"><code class="language-plaintext highlighter-rouge">range</code></h2>
 
-<p>Specifies the desired length in <code class="language-plaintext highlighter-rouge">words</code> or <code class="language-plaintext highlighter-rouge">paragraphs</code>.</p>
+<p>Specifies a range on which to focus the transcription in seconds (for audio inputs)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ "param", "length", "&lt;length&gt;" ]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ "param", "range", "&lt;start&gt;", "&lt;end&gt;" ]
+</code></pre></div></div>
+
+<h2 id="alignment"><code class="language-plaintext highlighter-rouge">alignment</code></h2>
+
+<p>Specifies alignment of labels (for audio inputs).
+For example, if the output format supports timestamps, these will occur according to the alignment. If parameter is not set, the DVM decides the default alignment.
+possible inputs <code class="language-plaintext highlighter-rouge">raw</code>, <code class="language-plaintext highlighter-rouge">segment</code>, <code class="language-plaintext highlighter-rouge">word</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ "param", "alignment", "raw" ]
 </code></pre></div></div>
 
 <h1 id="output">Output</h1>
@@ -98,24 +107,21 @@
 <p>Including but not limited to:</p>
 
 <ul>
+  <li><code class="language-plaintext highlighter-rouge">text/vtt</code></li>
   <li><code class="language-plaintext highlighter-rouge">text/plain</code></li>
   <li><code class="language-plaintext highlighter-rouge">text/markdown</code></li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<h2 id="summarize-4-events-and-the-output-of-one-dvm-job-request-into-10-paragraphs">Summarize 4-events and the output of one DVM job-request into 10 paragraphs</h2>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65003</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
     </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"job"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"length"</span><span class="p">,</span><span class="w"> </span><span class="s2">"10 paragraphs"</span><span class="w"> </span><span class="p">]</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://chtbl.com/track/E2818G/http://feeds.soundcloud.com/stream/1602940803-bitcoin-and-data-vendetta-ep782.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"range"</span><span class="p">,</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w"> </span><span class="s2">"360"</span><span class="w"> </span><span class="p">]</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"alignment"</span><span class="p">,</span><span class="w"> </span><span class="s2">"raw"</span><span class="p">]</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>

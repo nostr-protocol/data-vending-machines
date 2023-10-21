@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-<title>Text extraction</title>
+<title>Nostr People Discovery</title>
 
-	<meta name="description" content="Job request to extract text from some kind of input.">
+	<meta name="description" content="Job request to discover nostr pubkeys">
 
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -62,10 +62,10 @@
 						<div class="align-container" data-mh>
 							<div class="align-inner">
 								
-									<h1 class="hero-subheader__title">Text extraction</h1>
+									<h1 class="hero-subheader__title">Nostr People Discovery</h1>
 								
 								
-									<p class="hero-subheader__desc">Job request to extract text from some kind of input.</p>
+									<p class="hero-subheader__desc">Job request to discover nostr pubkeys</p>
 								
 								
 							</div><!-- /.align-inner -->
@@ -82,37 +82,53 @@
 						<div class="content">
 							<h1 id="input">Input</h1>
 
-<p>Jobs MIGHT specify a mime type as the <code>marker</code> in the <code>i</code> tag.</p>
+<p>Clients MIGHT provide an input to be used by the DVM. The DVM decides how to interpret this input.</p>
 
-<h1 id="params">Params</h1>
-
-<h2 id="range"><code class="language-plaintext highlighter-rouge">range</code></h2>
-
-<p>Specifies a range on which to focus the transcription in seconds (for audio inputs)</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ "param", "range", "&lt;start&gt;", "&lt;end&gt;" ]
-</code></pre></div></div>
+<p>DVMs would implement different algorithms, with different value props. Clients might choose to allow users to choose which algorithm resonates with them to discover which DVM suits their needs.</p>
 
 <h1 id="output">Output</h1>
 
-<p>Including but not limited to:</p>
+<p>A <code class="language-plaintext highlighter-rouge">content</code> JSON-stringified list of tags. Tags SHOULD be <code class="language-plaintext highlighter-rouge">a</code> or <code class="language-plaintext highlighter-rouge">e</code>.</p>
+
+<h1 id="params">Params</h1>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">text/vtt</code></li>
-  <li><code class="language-plaintext highlighter-rouge">text/plain</code></li>
-  <li><code class="language-plaintext highlighter-rouge">text/markdown</code></li>
+  <li><code class="language-plaintext highlighter-rouge">p</code>: pubkey of the user to generate recommendations for (optional, defaults to the user sending the job request)</li>
+</ul>
+
+<h1 id="how-clients-can-use-this">How clients can use this</h1>
+
+<p>Clients don’t need to know what algorithm each DVM provides; the kind number <code class="language-plaintext highlighter-rouge">5300</code> simply means that the DVMs serving this kind will provide nostr-native content a user might be interested in.</p>
+
+<p>How “interested” is defined by each DVM is arbitrary and not the concern of a client, it’s the concern of a user and the interaction with the DVM they choose. Clients are acting as a vehicle to connect users with DVMs with the goal of discovering nostr-native content.</p>
+
+<p>Clients should allow users to choose which DVM they want to use, send the request and the only thing the client needs to know is how to render the results, which should be familiar to any nostr client.</p>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li><a href="https://vendata.io/dvms/npub1dvmspgv8s5fhnenuf6mazcltkd5kchn2p8n35nw24z2w6ghvqpequ3p2gl">Suggest Wizard</a>: helps find people to follow based on the user’s current follows</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
+<h4 id="request">Request</h4>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65002</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://chtbl.com/track/E2818G/http://feeds.soundcloud.com/stream/1602940803-bitcoin-and-data-vendetta-ep782.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"range"</span><span class="p">,</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w"> </span><span class="s2">"360"</span><span class="w"> </span><span class="p">]</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5301</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="response">Response</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">6301</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;...&gt;"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;...&gt;"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;...&gt;"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;...&gt;"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="err">'</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

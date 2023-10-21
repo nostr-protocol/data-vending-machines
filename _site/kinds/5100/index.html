@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Image Generation</title>
+
+	<meta name="description" content="Job request to generate Images using AI models.">
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
+<link rel="stylesheet" href="/doks-theme/assets/css/style.css">
+
+	</head>
+	<body class="blue" data-spy="scroll" data-target=".js-scrollspy">
+		
+	<div class="offcanvas visible-xs">
+		<ul class="offcanvas__nav">
+			
+				<li><a href="/">Home</a></li>
+			
+				<li><a href="https://github.com/nostr-protocol/nips/blob/vending-machine/90.md">NIP-90</a></li>
+			
+		</ul><!-- /.offcanvas__nav -->
+	</div><!-- /.offcanvas -->
+
+
+
+	<header class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+						<a href="/" class="site-header__logo">Data Vending Machine</a>
+					
+					
+						<ul class="site-header__nav hidden-xs">
+							
+								<li><a href="/">Home</a></li>
+							
+								<li><a href="https://github.com/nostr-protocol/nips/blob/vending-machine/90.md">NIP-90</a></li>
+							
+						</ul><!-- /.site-header__nav -->
+						<button class="offcanvas-toggle visible-xs">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button><!-- /.offcanvas-toggle -->
+					
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</header><!-- /.site-header -->
+
+
+		<div class="hero-subheader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="align-container" data-mh>
+							<div class="align-inner">
+								
+									<h1 class="hero-subheader__title">Image Generation</h1>
+								
+								
+									<p class="hero-subheader__desc">Job request to generate Images using AI models.</p>
+								
+								
+							</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.hero-subheader -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="content">
+							<h1 id="input">Input</h1>
+
+<p>Clients must provide a prompt in the <code>"i" </code> tag field. For altering existing images user may optionally provide a second <code>"i"</code> tag containing the url to the existing image</p>
+
+<h1 id="params">Params</h1>
+
+<h2 id="model"><code class="language-plaintext highlighter-rouge">model</code></h2>
+
+<p>Description:
+Specifies the identifier for the AI model to be used for the image generation task. Different models might produce different outcomes.</p>
+
+<p>Usage:
+Set this parameter to the specific ID or name of the AI model you wish to use. This is especially useful if you have multiple models available and you want to select a particular one for a task. Ensure that the specified model is compatible with the task at hand and has been adequately trained or fine-tuned for optimal results.</p>
+
+<h2 id="lora"><code class="language-plaintext highlighter-rouge">lora</code></h2>
+
+<p>Description:
+Specifies the identifier of a lora. A lora provides weights that can be applied on top of a model. Users can combine models and loras to create unique images.</p>
+
+<h2 id="ratio"><code class="language-plaintext highlighter-rouge">ratio</code></h2>
+
+<p>Description:
+The Ratio of the output image. Allowed ratios are:
+1:1 4:3 16:9 16:10 3:4 9:16 10:16</p>
+
+<h2 id="negative_prompt"><code class="language-plaintext highlighter-rouge">negative_prompt</code></h2>
+
+<p>Description:
+Define a negative prompt that includes what the model should avoid during Generation. This sometimes helps improving the outcome quality</p>
+
+<h2 id="upscale"><code class="language-plaintext highlighter-rouge">upscale</code></h2>
+
+<p>Description:
+Specifies the upscale factor (1-x) DVMS might provide the possiblity to upscale an output image to improve the overall resolution and should use it by default. Users might want to disable or lower upscaling using the parameter.</p>
+
+<h1 id="output">Output</h1>
+
+<p>A link to the generated image(s)</p>
+
+<h1 id="example-1">Example 1</h1>
+
+<h2 id="generates-an-output-image-based-on-the-input-prompt-and-params">Generates an output image based on the input prompt and params</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"A purple ostrich watching the sunset"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ratio"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4:3"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w">  </span><span class="s2">"negative_prompt"</span><span class="p">,</span><span class="w"> </span><span class="s2">"broken hands, bad quality"</span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h1 id="example-2">Example 2</h1>
+
+<h2 id="converts-the-style-of-an-input-image">Converts the style of an input image</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://image.nostr.build/cbfedf544d1ab82d26332bf70c1ea55b8f275ae59a04c3dac175d9cae536725e.jpg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"In style of Pablo Picasso"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						</div><!-- /.content -->
+					</div><!-- /.col -->
+					<div class="col-md-4 col-md-offset-1">
+						<div class="sections-list-wrapper">
+							<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.section -->
+		
+		<div class="js-footer-area">
+			
+			
+			
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					
+						<a href="/" class="site-footer__logo">Data Vending Machine</a>
+					
+					
+						<hr>
+						<p class="site-footer__copyright">MIT License</p>
+					
+				</div><!-- /.col -->
+				
+					<div class="col-sm-6 align-right">
+						<ul class="social-list">
+							
+								<li>
+									<a href="https://github.com/pablof7z/data-vending-machines.org" target="_blank" class="social-list__item social-list__item--github">
+										<i class="icon icon--github"></i>
+									</a>
+								</li>
+							
+						</ul><!-- /.social-list -->
+					</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</footer><!-- /.site-footer -->
+
+
+<script src="/doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/scripts.min.js"></script>
+
+
+
+
+		</div><!-- /.js-footer-area -->
+	</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Examples</title>
+
+	<meta name="description" content="Examples of Data Vending Machines events">
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
+<link rel="stylesheet" href="/doks-theme/assets/css/style.css">
+
+	</head>
+	<body class="blue" data-spy="scroll" data-target=".js-scrollspy">
+		
+	<div class="offcanvas visible-xs">
+		<ul class="offcanvas__nav">
+			
+				<li><a href="/">Home</a></li>
+			
+				<li><a href="https://github.com/nostr-protocol/nips/blob/vending-machine/90.md">NIP-90</a></li>
+			
+		</ul><!-- /.offcanvas__nav -->
+	</div><!-- /.offcanvas -->
+
+
+
+	<header class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+						<a href="/" class="site-header__logo">Data Vending Machine</a>
+					
+					
+						<ul class="site-header__nav hidden-xs">
+							
+								<li><a href="/">Home</a></li>
+							
+								<li><a href="https://github.com/nostr-protocol/nips/blob/vending-machine/90.md">NIP-90</a></li>
+							
+						</ul><!-- /.site-header__nav -->
+						<button class="offcanvas-toggle visible-xs">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button><!-- /.offcanvas-toggle -->
+					
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</header><!-- /.site-header -->
+
+
+		<div class="hero-subheader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="align-container" data-mh>
+							<div class="align-inner">
+								
+									<h1 class="hero-subheader__title">Examples</h1>
+								
+								
+									<p class="hero-subheader__desc">Examples of Data Vending Machines events</p>
+								
+								
+							</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.hero-subheader -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="content">
+							<h4 id="transcript-of-a-podcast-from-second-900-to-930">Transcript of a podcast from second <code class="language-plaintext highlighter-rouge">900</code> to <code class="language-plaintext highlighter-rouge">930</code>.</h4>
+
+<h5 id="kind65002-speech-to-text-job-request"><code class="language-plaintext highlighter-rouge">kind:65002</code>: Speech-to-text job request</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65002</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://bitcoin.review/episode1.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"params"</span><span class="p">,</span><span class="w"> </span><span class="s2">"range"</span><span class="p">,</span><span class="w"> </span><span class="s2">"900"</span><span class="p">,</span><span class="w"> </span><span class="s2">"930"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"50000"</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65000-job-feedback-request-for-partial-payment"><code class="language-plaintext highlighter-rouge">kind:65000</code>: Job Feedback: request for (partial) payment</h5>
+<ul>
+  <li>The SP is signaling here that it won’t start processing until 100 sats are paid
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"status"</span><span class="p">,</span><span class="w"> </span><span class="s2">"payment-required"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"amount"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>User zaps 100 sats to the <code class="language-plaintext highlighter-rouge">kind:65000</code> job-feedback</li>
+</ul>
+
+<h5 id="kind65001-job-result--request-for-remaining-payment"><code class="language-plaintext highlighter-rouge">kind:65001</code>: Job result + request for remaining payment</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blah blah blah"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"amount"</span><span class="p">,</span><span class="w"> </span><span class="s2">"400000"</span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="summarization-of-a-podcast">Summarization of a podcast</h4>
+<p>User publishes two job requests at the same time. A job that transcribes an audio and a job that summarizes the transcription (output of job #1).</p>
+
+<p>User publishes event #1 and #2 together.</p>
+
+<h5 id="kind65002-job-request-1-speech-to-text"><code class="language-plaintext highlighter-rouge">kind:65002</code>: Job Request #1: speech-to-text</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65002</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://bitcoin.review/episode1.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"params"</span><span class="p">,</span><span class="w"> </span><span class="s2">"range"</span><span class="p">,</span><span class="w"> </span><span class="s2">"900"</span><span class="p">,</span><span class="w"> </span><span class="s2">"930"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65002-job-request-2-summarization-of-job-1s-result"><code class="language-plaintext highlighter-rouge">kind:65002</code>: Job Request #2: summarization of job #1’s result</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65003</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w"> </span><span class="s2">"job"</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">output</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">job</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="mi">12345</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"params"</span><span class="p">,</span><span class="w"> </span><span class="s2">"length"</span><span class="p">,</span><span class="w"> </span><span class="s2">"3 paragraphs"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"10000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="translation-of-a-note">Translation of a note</h4>
+<h5 id="kind65004-job-request-1-translation-of-an-existing-note"><code class="language-plaintext highlighter-rouge">kind:65004</code>: Job Request #1: translation of an existing note</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pubkey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65004</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;hexid&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"event"</span><span class="p">,</span><span class="w"> </span><span class="s2">"wss://relay.nostr.com"</span><span class="w"> </span><span class="p">]</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/plain"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"params"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lang"</span><span class="p">,</span><span class="w"> </span><span class="s2">"es_AR"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"5000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65001-job-result"><code class="language-plaintext highlighter-rouge">kind:65001</code>: Job result</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65001</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Che, que copado, boludo!"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12346"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"p"</span><span class="p">,</span><span class="w"> </span><span class="s2">"abcdef"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"amount"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4000"</span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="ai-image-of-the-summarization-of-2-podcasts">AI-image of the summarization of 2 podcasts</h4>
+
+<h5 id="kind65002-job-request-1-transcribe-podcast-1"><code class="language-plaintext highlighter-rouge">kind:65002</code>: Job request #1 (transcribe podcast #1)</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65002</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://example.com/episode1.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65002-job-request-2-transcribe-podcast-2"><code class="language-plaintext highlighter-rouge">kind:65002</code>: Job request #2 (transcribe podcast #2)</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65002</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://example.com/episode2.mp3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65003-job-request-3-summarize-the-two-jobs-outputs-into-one-paragraph"><code class="language-plaintext highlighter-rouge">kind:65003</code>: Job request #3 (summarize the two job’s outputs into one paragraph)</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65003</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"length"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1 paragraph"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"job"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"124"</span><span class="p">,</span><span class="w"> </span><span class="s2">"job"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="kind65005-job-request-4-generate-image-based-on-the-summary"><code class="language-plaintext highlighter-rouge">kind:65005</code>: Job request #4 (generate image based on the summary)</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"126"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65004</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"125"</span><span class="p">,</span><span class="w"> </span><span class="s2">"job"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"prompt"</span><span class="p">,</span><span class="w"> </span><span class="s2">"photorealistic"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w"> </span><span class="s2">"4000x4000"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"500000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="ai-image-of-embedded-input">AI-image of embedded input</h4>
+
+<h5 id="kind65005-job-request"><code class="language-plaintext highlighter-rouge">kind:65005</code>: Job request</h5>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">65004</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Millions of vending machines, interconnected with tubes with eah other"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"prompt"</span><span class="p">,</span><span class="w"> </span><span class="s2">"photorealistic"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"500000"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						</div><!-- /.content -->
+					</div><!-- /.col -->
+					<div class="col-md-4 col-md-offset-1">
+						<div class="sections-list-wrapper">
+							<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.section -->
+		
+		<div class="js-footer-area">
+			
+			
+			
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					
+						<a href="/" class="site-footer__logo">Data Vending Machine</a>
+					
+					
+						<hr>
+						<p class="site-footer__copyright">MIT License</p>
+					
+				</div><!-- /.col -->
+				
+					<div class="col-sm-6 align-right">
+						<ul class="social-list">
+							
+								<li>
+									<a href="https://github.com/pablof7z/data-vending-machines.org" target="_blank" class="social-list__item social-list__item--github">
+										<i class="icon icon--github"></i>
+									</a>
+								</li>
+							
+						</ul><!-- /.social-list -->
+					</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</footer><!-- /.site-footer -->
+
+
+<script src="/doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/scripts.min.js"></script>
+
+
+
+
+		</div><!-- /.js-footer-area -->
+	</body>
+</html>
