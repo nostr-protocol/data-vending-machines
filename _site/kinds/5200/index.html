@@ -86,17 +86,6 @@
 
 <h1 id="params">Params</h1>
 
-<h2 id="format"><code class="language-plaintext highlighter-rouge">format</code></h2>
-
-<p>Description:
-The output format</p>
-
-<p>Usage:
-Optional parameter. If set the DVM uses the format to convert the video to the given format, otherwise it’s up to the DVM to choose an output format. By using a format such as mp3, the video might also be converted to an audio file.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ "param", "format", "mp3" ]
-</code></pre></div></div>
-
 <h2 id="range"><code class="language-plaintext highlighter-rouge">range</code></h2>
 
 <p>Specifies a range if the video should be shortend.</p>
@@ -105,19 +94,32 @@ Optional parameter. If set the DVM uses the format to convert the video to the g
 </code></pre></div></div>
 
 <h1 id="output">Output</h1>
+<p>Description:
+The output format</p>
 
-<p>A link to the converted video</p>
+<p>Usage:
+Optional. If set the DVM uses the format to convert the video to the given format, otherwise it’s up to the DVM to choose an output format. By using a format such as audio/mp3, the video might also be converted to an audio file.
+Including but not limited to:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">video/mp4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">video/avi</code></li>
+  <li><code class="language-plaintext highlighter-rouge">audio/mp3</code></li>
+  <li><code class="language-plaintext highlighter-rouge">audio/wav</code></li>
+  <li><code class="language-plaintext highlighter-rouge">audio/ogg</code></li>
+</ul>
 
 <h1 id="example">Example</h1>
 
-<h2 id="generates-the-output-based-on-the-input-link-and-params">Generates the output based on the input link and params</h2>
+<h2 id="generates-the-output-based-on-a-social-media-link-and-params">Generates the output based on a social media link and params</h2>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5200</span><span class="p">,</span><span class="w">
     </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">[</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://x.com/WalkerAmerica/status/1713928663865966627?s=20"</span><span class="p">,</span><span class="w"> </span><span class="s2">"url"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"format"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mp4"</span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"output"</span><span class="p">,</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"range"</span><span class="p">,</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"10"</span><span class="p">],</span><span class="w">
         
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
