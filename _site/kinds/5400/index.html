@@ -92,6 +92,15 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">relay</code>: a relay url to include in the count (required, client MAY provide more than one relay)</li>
+  <li><code class="language-plaintext highlighter-rouge">group</code>: an event field or tag name to group results by, resulting in a potentially nested dictionary of results (optional, client MAY provide more than one group). Supported groups include:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">content</code> - an event’s <code class="language-plaintext highlighter-rouge">content</code> field</li>
+      <li><code class="language-plaintext highlighter-rouge">pubkey</code> - an event’s <code class="language-plaintext highlighter-rouge">pubkey</code> field</li>
+      <li><code class="language-plaintext highlighter-rouge">reply</code> - an event’s <code class="language-plaintext highlighter-rouge">reply</code> e-tag</li>
+      <li><code class="language-plaintext highlighter-rouge">root</code> - an event’s <code class="language-plaintext highlighter-rouge">root</code> e-tag</li>
+      <li>Any other value will be assumed to be a tag name. The first matching tag’s value will be used.</li>
+    </ul>
+  </li>
 </ul>
 
 <h1 id="how-clients-can-use-this">How clients can use this</h1>
@@ -118,6 +127,23 @@
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">6400</span><span class="p">,</span><span class="w">
     </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"129469"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="request-1">Request</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">#kinds</span><span class="se">\"</span><span class="s2">:[7], </span><span class="se">\"</span><span class="s2">#e</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">7b0d90f1973da1cea186c85fbd09b3e4e455ce4d438b60a3d1f9aabc1681418f</span><span class="se">\"</span><span class="s2">}]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">5400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"param"</span><span class="p">,</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"> </span><span class="s2">"content"</span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="response-1">Response</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">6400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">🤙</span><span class="se">\"</span><span class="s2">:224,</span><span class="se">\"</span><span class="s2">+</span><span class="se">\"</span><span class="s2">:31,</span><span class="se">\"</span><span class="s2">🧡</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">❤️</span><span class="se">\"</span><span class="s2">:7,</span><span class="se">\"</span><span class="s2">🤣</span><span class="se">\"</span><span class="s2">:3,</span><span class="se">\"</span><span class="s2">⚡</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">💜</span><span class="se">\"</span><span class="s2">:7,</span><span class="se">\"</span><span class="s2">:thinking face:</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">🦶</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">🍺</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">🍆</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">🤙🏼</span><span class="se">\"</span><span class="s2">:3,</span><span class="se">\"</span><span class="s2">🔥</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">🏇</span><span class="se">\"</span><span class="s2">:1,</span><span class="se">\"</span><span class="s2">💚</span><span class="se">\"</span><span class="s2">:1}"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
