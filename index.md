@@ -50,5 +50,9 @@ grid_navigation:
       excerpt: "Jobs where the goal is to analyze something"
       cta: View
       url: 'ranges/54xx'
+    - title: Others
+      excerpt: "Jobs that don't fit neatly in other categories"
+      cta: View
+      url: 'ranges/59xx'
 ---
 ---
