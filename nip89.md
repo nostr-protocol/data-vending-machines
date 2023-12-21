@@ -16,7 +16,7 @@ This is where the long-tail of DVMs can be explored.
 
 # Example
 
-## DVM supporting `kind:65005` -- in Dali style
+## DVM supporting `kind:5100` -- in Dali style
 
 This NIP-89 acts as a sales-pitch for the DVM to explain to a user exactly what they can expect from interacting with this DVM
 
@@ -27,17 +27,19 @@ This NIP-89 acts as a sales-pitch for the DVM to explain to a user exactly what 
         \"name\": \"Dali Vending Machine\",
         \"image\": \"https://cdn.nostr.build/i/fb207be87d748ad927f52a063c221d1d97ef6d75e660003cb6e85baf2cd2d64e.jpg\",
         \"about\": \"I'm Dali re-incarnated, faster and cheaper\",
+        \"encryptionSupported\": True,
+
     }",
   "tags": [
     [ "d", "td51xbgxwbt5116r" ],
-    [ "k", "65005" ]
+    [ "k", "5100" ]
   ],
   "kind": 31990,
   "pubkey": "6b37d5dc88c1cbd32d75b713f6d4c2f7766276f51c9337af9d32c8d715cc1b93",
 }
 ```
 
-## DVM supporting `kind:65008`
+## DVM supporting `kind:5300`
 
 This NIP-89 acts as a sales-pitch for the DVM to explain to a user exactly what they can expect from interacting with this DVM
 
@@ -48,10 +50,11 @@ This NIP-89 acts as a sales-pitch for the DVM to explain to a user exactly what 
         \"name\": \"You might have missed\",
         \"image\": \"https://cdn.nostr.build/i/fb207be87d748ad927f52a063c221d1d97ef6d75e660003cb6e85baf2cd2d64e.jpg\",
         \"about\": \"My goal is to help you keep up – or catch up – with your world, no matter how much time you spend on t̶w̶i̶t̶t̶e̶r̶ nostr.\",
+        \"encryptionSupported\": False,
     }",
   "tags": [
     [ "d", "td51xbgxwbt5116r" ],
-    [ "k", "65008" ]
+    [ "k", "5300" ]
   ],
   "kind": 31990,
   "pubkey": "6b37d5dc88c1cbd32d75b713f6d4c2f7766276f51c9337af9d32c8d715cc1b93",
