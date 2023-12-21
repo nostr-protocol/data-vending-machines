@@ -38,7 +38,7 @@ grid_navigation:
       excerpt: "Jobs where the input or output is an image"
       cta: View
       url: 'ranges/51xx'
-    - title: Video Manipulation
+    - title: Video/Audio Manipulation
       excerpt: "Jobs where the input or output is video"
       cta: View
       url: 'ranges/52xx'
