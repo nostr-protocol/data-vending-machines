@@ -46,7 +46,7 @@ grid_navigation:
       excerpt: "Jobs where the goal is to discover something"
       cta: View
       url: 'ranges/53xx'
-    - title: Analytics
+    - title: Nostr Analytics
       excerpt: "Jobs where the goal is to analyze nostr events"
       cta: View
       url: 'ranges/54xx'
