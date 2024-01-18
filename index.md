@@ -47,9 +47,13 @@ grid_navigation:
       cta: View
       url: 'ranges/53xx'
     - title: Analytics
-      excerpt: "Jobs where the goal is to analyze something"
+      excerpt: "Jobs where the goal is to analyze nostr events"
       cta: View
       url: 'ranges/54xx'
+    - title: Software Analysis
+      excerpt: "Jobs where the goal is to analyze Files/Code"
+      cta: View
+      url: 'ranges/55xx'
     - title: Others
       excerpt: "Jobs that don't fit neatly in other categories"
       cta: View
