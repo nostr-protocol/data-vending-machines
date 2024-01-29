@@ -54,6 +54,10 @@ grid_navigation:
       excerpt: "Jobs where the goal is to analyze Files/Code"
       cta: View
       url: 'ranges/55xx'
+    - title: Software Execution
+      excerpt: "Jobs where the goal is to run code or execute files"
+      cta: View
+      url: 'ranges/56xx'
     - title: Others
       excerpt: "Jobs that don't fit neatly in other categories"
       cta: View
